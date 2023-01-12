@@ -23,12 +23,19 @@ text:'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion ax
 ]
 
     const feedbackBox = document.getElementById("feedback-box")
+    const previousBtn = document.getElementById("previous-btn")
+    const nextBtn = document.getElementById("next-btn")
+    const surpriseBtn = document.getElementById("surprise-btn")
+    previousBtn.addEventListener('click', previousReview)
+    nextBtn.addEventListener('click',nextReview)
+    surpriseBtn.addEventListener('click', randomReview)
+
 
     function renderReview(){
 
         let feedback = feedbacks[i]
 
-        feedbackBox.innerHTML +=  `
+        feedbackBox.innerHTML =  `
             <div ><img class="feedback-box__image" src="${feedback.image}" alt="" /></div>
             <div class="feedback-box__name">${feedback.name}</div>
             <div class="feedback-box__job">${feedback.job}</div>
@@ -44,6 +51,12 @@ text:'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion ax
     }
     function previousReview(){
         i-= 1
+        renderReview()
+    }
+
+    function randomReview(){
+        let randomIndex = Math.floor(Math.random() * feedbacks.length)
+        i = randomIndex
         renderReview()
     }
 
