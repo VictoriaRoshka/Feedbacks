@@ -24,18 +24,28 @@ text:'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion ax
 
     const feedbackBox = document.getElementById("feedback-box")
 
-    function renderViews(){
-        feedbackBox.innerHTML = ""
-        feedbacks.forEach(function(feedback){
-            feedbackBox.innerHTML +=  `<div class="feedback-box__image"><img src="${feedback.image}" alt="" /></div>
+    function renderReview(){
+
+        let feedback = feedbacks[i]
+
+        feedbackBox.innerHTML +=  `
+            <div ><img class="feedback-box__image" src="${feedback.image}" alt="" /></div>
             <div class="feedback-box__name">${feedback.name}</div>
             <div class="feedback-box__job">${feedback.job}</div>
-            <div class="feedback-box__text">${feedback.text}</div>
-            <div class="feedback-box__navigation">
-            <img src="image/caret-left-solid.svg" alt=""/>
-            <img src="image/caret-right-solid.svg" alt=""/>
-            </div>`
-        })
+            <div class="feedback-box__text">${feedback.text}</div>`
+
     }
-    renderViews()
+    renderReview()
+
+    function nextReview(){
+
+        i+= 1
+        renderReview()
+    }
+    function previousReview(){
+        i-= 1
+        renderReview()
+    }
+
+            
 

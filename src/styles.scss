@@ -20,5 +20,27 @@
   gap:20px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px gray ;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 50px auto;
 
+}
+.feedback-box__image{
+  border-radius: 100px;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
+.feedback-box__name{
+
+}
+.feedback-box__job{
+
+}
+.feedback-box__text{
+
+}
+.feedback-box__navigation{
+  
 }
