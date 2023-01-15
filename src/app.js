@@ -31,6 +31,7 @@ text:'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion ax
     surpriseBtn.addEventListener('click', randomReview)
 
 
+
     function renderReview(){
 
         let feedback = feedbacks[i]
@@ -47,10 +48,20 @@ text:'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion ax
     function nextReview(){
 
         i+= 1
+
+        if(i === 4){
+            i = 0
+        }
         renderReview()
+        
     }
     function previousReview(){
+
         i-= 1
+
+        if(i === -1){
+            i = 4
+        }
         renderReview()
     }
 
@@ -59,6 +70,9 @@ text:'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion ax
         i = randomIndex
         renderReview()
     }
+
+
+    
 
             
 
