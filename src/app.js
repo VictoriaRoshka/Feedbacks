@@ -52,7 +52,7 @@ renderReview()
 function nextReview() {
   i += 1
 
-  if (i === 4) {
+  if (i === feedbacks.length) {
     i = 0
   }
   renderReview()
@@ -61,7 +61,7 @@ function previousReview() {
   i -= 1
 
   if (i === -1) {
-    i = 4
+    i = feedbacks.length - 1
   }
   renderReview()
 }
